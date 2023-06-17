@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="main.c"; OBJECT_FILE="${CFILE%.c}.o"; gcc -c "$CFILE" -o "$OBJECT_FILE"
+gcc -c "$CFILE" -o "${CFILE%.c}.o"
