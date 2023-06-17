@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c "$CFILE" -o "${CFILE%.c}.o"
+CFILE="your_c_file.c" OUTPUT_FILE="${CFILE%.c}.o" gcc -c "$CFILE" -o "$OUTPUT_FILE"
