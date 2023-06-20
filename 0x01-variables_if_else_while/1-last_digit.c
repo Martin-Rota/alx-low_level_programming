@@ -19,6 +19,10 @@ int main(void)
 
 	lastDigit = abs(n) % 10;
 
+	if (n < 0)
+	{
+		lastDigit *= -1;
+	}
 	if (lastDigit == 0)
 	{
 		printf("0\n");
