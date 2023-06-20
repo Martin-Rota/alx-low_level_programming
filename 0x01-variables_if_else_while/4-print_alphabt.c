@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 /**
@@ -11,7 +12,7 @@ int main(void)
 
 	while (alpha <= 'z')
 	{
-		if (alpha != 'q') && (alpha != 'e')
+		if ((alpha != 'q') && (alpha != 'e'))
 		{
 			putchar(alpha);
 		}
