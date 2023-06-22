@@ -12,7 +12,7 @@
 int _putchar(char c);
 
 /**
- * print_the_alphabet - print lowercase alphabet
+ * print_alphabet - print lowercase alphabet
  */
 
 void print_alphabet(void);
