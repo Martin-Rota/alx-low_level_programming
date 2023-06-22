@@ -39,6 +39,6 @@ int _islower(int c);
 * Return: 1 if alphabetic, 0 otherwise                                         
 */
 
-int _isalpha(int c)
+int _isalpha(int c);
 
 #endif
