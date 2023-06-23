@@ -13,7 +13,7 @@ int print_last_digit(int n)
 {
 	int last_digit;
 
-	if (n==INT_MIN)
+	if (n == INT_MIN)
 	{
 		last_digit = 8;
 		_putchar(last_digit + '0');
@@ -22,7 +22,9 @@ int print_last_digit(int n)
 	{
 		int abs_val = abs(n);
 		last_digit = abs_val % 10;
+		
 	}
+	
 	if (last_digit < 0)
 	{
 	last_digit = -last_digit;
