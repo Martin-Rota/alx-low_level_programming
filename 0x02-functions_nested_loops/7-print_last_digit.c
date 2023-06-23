@@ -15,7 +15,7 @@ int print_last_digit(int n)
 
 	if (n == INT_MIN)
 	{
-		last_digit = 8;
+		last_digit = 0;
 		_putchar(last_digit + '0');
 	}
 	else
