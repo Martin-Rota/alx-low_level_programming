@@ -11,7 +11,8 @@
 
 int print_last_digit(int n)
 {
-	n = abs(n) % 10;
+	long long abs_val = labs((long long)n);
+	n = abs_val % 10;
 
 	if (n < 0)
 	{
