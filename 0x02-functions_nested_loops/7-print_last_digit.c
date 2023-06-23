@@ -21,6 +21,7 @@ int print_last_digit(int n)
 	else
 	{
 		int abs_val = abs(n);
+
 		last_digit = abs_val % 10;
 
 	}
