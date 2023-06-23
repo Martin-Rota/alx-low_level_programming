@@ -11,16 +11,16 @@
 
 int print_last_digit(int n)
 {
-	long long abs_val = labs((long long)n);
-	n = abs_val % 10;
+	int abs_val = abs(n));
+	int last_digit = abs_val % 10;
 
-	if (n < 0)
+	if (last_digit < 0)
 	{
-		n = -n;
+		last_digit = -last_digit;
 	}
 	else
 	{
-		_putchar(n + '0');
+		_putchar(last_digit + '0');
 	}
-	return (n);
+	return last_digit;
 }
