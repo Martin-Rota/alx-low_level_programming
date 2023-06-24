@@ -1,8 +1,16 @@
-#ifndef MAIN.H
-#define MAIN.H
+#ifndef MAIN_H
+#define MAIN_H
 
 int _isupper(int c);
 int _isdigit(int c);
+
+/**
+* mul - Multiplies two integers.
+* @a: 1st integer                   
+* @b: 2nd integer                                                            
+* Return: Result between a * b                   
+**/
+
 int mul(int a, int b);
 int _putchar(char c);
 void print_numbers(void);
