@@ -14,9 +14,12 @@ int print_last_digit(int n)
 	if (n < 0)
 		n = -n;
 
+
 	last_digit = n % 10;
 
-	printf("%d\n", last_digit);
 
-	return last_digit;
+	_putchar(last_digit + '0');
+	_putchar('\n');
+
+	return (last_digit);
 }
