@@ -7,31 +7,29 @@
 
 void print_number(int n)
 {
+	unsigned int tens, digit, positive = n;
+	double t_beg = 1;
+
 	if (n == 0)
-	{
 		_putchar('0');
-	}
-
-	if (n < 0)
+	else
 	{
-		_putchar('-');
-		n = -n;
-	}
+		if (n < 0)
+		{
+			positive = n * -1;
+			_putchar('-');
+		}
 
-	int magnitude = 1;
-	int temp = n;
+		while (t_beg <= positive)
+			t_beg *= 10;
+		tens = t_beg / 10;
 
-	while (temp > 9)
-	{
-		magnitude *= 10;
-		temp /= 10;
-	}
-
-	while (magnitude > 0)
-	{
-		int digit = n / magnitude;
-		_putchar(digit + '0');
-		n %= magnitude;
-		magnitude /= 10;
+		while (tens >= 1)
+		{
+			digit = positive / tens;
+			_putchar(digit + '0');
+			positive = (positive - (tens * digit));
+			tens /= 10;
+		}
 	}
 }
