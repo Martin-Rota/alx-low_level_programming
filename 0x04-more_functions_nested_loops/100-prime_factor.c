@@ -28,9 +28,8 @@ unsigned long largest_prime_factor(unsigned long n)
 }
 
 /**
-* main - Entry point                                                       
- *                                                                         
- * Return: Always 0                                                        
+ * main - Entry point
+ *Return: 0 Always
  */
 
 int main(void)
