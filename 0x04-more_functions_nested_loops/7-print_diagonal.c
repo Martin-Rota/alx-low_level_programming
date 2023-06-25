@@ -6,10 +6,9 @@
  */
 
 void print_diagonal(int n)
-
 {
 	int draw;
-	int spaces;
+	int space;
 
 	if (n > 0)
 		for (draw = 0; draw < n; draw++)
