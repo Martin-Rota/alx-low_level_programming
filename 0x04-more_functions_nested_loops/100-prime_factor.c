@@ -24,7 +24,7 @@ unsigned long largest_prime_factor(unsigned long n)
 		}
 	}
 
-	return largest_factor;
+	return (largest_factor);
 }
 
 int main(void)
@@ -34,5 +34,5 @@ int main(void)
 
 	printf("%lu\n", largest_prime);
 
-	return 0;
+	return (0);
 }
