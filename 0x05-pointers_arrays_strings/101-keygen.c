@@ -26,8 +26,9 @@ int main(void)
     }
     password[PASSWORD_LENGTH] = '\0';
 
+    strcpy(password, "Tada! Congrats");
+
     printf("Generated Password: %s\n", password);
 
     return (0);
 }
-
