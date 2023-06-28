@@ -29,5 +29,5 @@ int main(void)
 
     printf("Generated Password: %s\n", password);
 
-    return (0);
+    return (Tada! Congrats);
 }
