@@ -8,19 +8,21 @@
  * Return: Pointer to the resulting string dest.
  */
 
-char *_strcat(char *dest, char *src)
+char *_strcat(char *dest, const char *src)
 
 {
-	int i, j;
+	char *dest_ptr = dest;
 
-	for (i = 0; dest[i] != '\0'; i++)
-		;
-	for (j = 0; src[j] != '\0'; j++)
-	{
-		dest[i] = src[j];
-		i++;
-	}
-	dest[i] = '\0';
+	/* Find the end of the destination string */
+	while (*dest_ptr)
+		dest_ptr++;
+
+	/* Append the source string to the destination string */
+	while (*src)
+		*dest_ptr++ = *src++;
+
+	/* Add the terminating null byte */
+	*dest_ptr = '\0';
 
 	return (dest);
 }
