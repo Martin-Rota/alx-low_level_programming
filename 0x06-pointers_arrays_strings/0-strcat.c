@@ -7,22 +7,20 @@
  *
  * Return: Pointer to the resulting string dest.
  */
-
-char *_strcat(char *dest, const char *src)
-
+char *_strcat(char *dest, char *src)
 {
-	char *dest_ptr = dest;
+	int i, j;
 
-	/* Find the end of the destination string */
-	while (*dest_ptr)
-		dest_ptr++;
+	/* Find the length of the destination string */
+	for (i = 0; dest[i] != '\0'; i++)
+		;
 
 	/* Append the source string to the destination string */
-	while (*src)
-		*dest_ptr++ = *src++;
+	for (j = 0; src[j] != '\0'; j++)
+		dest[i + j] = src[j];
 
 	/* Add the terminating null byte */
-	*dest_ptr = '\0';
+	dest[i + j] = '\0';
 
 	return (dest);
 }
