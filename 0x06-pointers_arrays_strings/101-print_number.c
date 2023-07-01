@@ -4,8 +4,6 @@
  * print_number - Prints an integer
  * @n: The integer to be printed
  *
- * Description: This function prints an integer using the _putchar function.
- * It handles both positive and negative numbers.
  */
 
 void print_number(int n)
