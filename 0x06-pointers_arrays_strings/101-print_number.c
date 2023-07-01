@@ -2,40 +2,38 @@
 
 /**
  * print_number - Prints an integer
- * @n: The integer to be printed
+ * @n: The number to be printed
  *
  * Description: This function prints an integer using the _putchar function.
  * It handles both positive and negative numbers.
  */
+
 void print_number(int n)
+
 {
-	if (n < 0)
+	unsigned int divisor, digit, positive = n;
+	double tens_place = 1;
+
+	if (n == 0)
+		_putchar('0');
+	else
 	{
-		_putchar('-');
-		n = -n;
+		if (n < 0)
+		{
+			positive = n * -1;
+			_putchar('-');
+		}
+
+		while (tens_place <= positive)
+			tens_place *= 10;
+		divisor = tens_place / 10;
+
+		while (divisor >= 1)
+		{
+			digit = positive / divisor;
+			_putchar(digit + '0');
+			positive = positive - (divisor * digit);
+			divisor /= 10;
+		}
 	}
-
-	int divisor = 1;
-	while (n / divisor >= 10)
-		divisor *= 10;
-
-	while (divisor > 0)
-	{
-		int digit = n / divisor;
-		_putchar('0' + digit);
-		n %= divisor;
-		divisor /= 10;
-	}
-}
-
-/**
- * _putchar - Writes a character to stdout
- * @c: The character to be written
- *
- * Return: On success, the character written.
- * On error, -1 is returned.
- */
-int _putchar(char c)
-{
-	return (putchar(c));
 }
