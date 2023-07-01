@@ -7,9 +7,7 @@
  * Description: This function prints an integer using the _putchar function.
  * It handles both positive and negative numbers.
  */
-
 void print_number(int n)
-
 {
 	if (n < 0)
 	{
@@ -28,4 +26,16 @@ void print_number(int n)
 		n %= divisor;
 		divisor /= 10;
 	}
+}
+
+/**
+ * _putchar - Writes a character to stdout
+ * @c: The character to be written
+ *
+ * Return: On success, the character written.
+ * On error, -1 is returned.
+ */
+int _putchar(char c)
+{
+	return (putchar(c));
 }
