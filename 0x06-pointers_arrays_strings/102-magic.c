@@ -1,42 +1,23 @@
-#include "main.h"
 #include <stdio.h>
 
-/**
- * print_number - Prints an integer
- * @n: The number to be printed
- *
- * Description: This function prints an integer using the _putchar function.
- * It handles both positive and negative numbers.
- */
-
-void print_number(int n)
+int main(void)
 {
-	unsigned int divisor, digit, positive = n;
-	double tens_place = 1;
+  int n;
+  int a[5];
+  int *p;
 
-	if (n == 0)
-		_putchar('0');
-	else
-	{
-		if (n < 0)
-		{
-			positive = n * -1;
-			_putchar('-');
-		}
-
-		while (tens_place <= positive)
-			tens_place *= 10;
-		divisor = tens_place / 10;
-
-		while (divisor >= 1)
-		{
-			digit = positive / divisor;
-			_putchar(digit + '0');
-			positive = positive - (divisor * digit);
-			divisor /= 10;
-		}
-	}
-
-	/* Additional line of code */
-	printf("a[2] = %d\n", 'a'[2]);
+  a[2] = 1024;
+  p = &n;
+  /*
+   * write your line of code here...
+   * Remember:
+   * - you are not allowed to use a
+   * - you are not allowed to modify p
+   * - only one statement
+   * - you are not allowed to code anything else than this line of code
+   */
+ printf("a[2] = %d\n", *(int*)((char*)&n + 8));
+  /* ...so that this prints 98\n */
+  printf("a[2] = %d\n", a[2]);
+  return (0);
 }
