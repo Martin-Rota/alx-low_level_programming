@@ -4,11 +4,10 @@
  * _strspn - Gets the length of a prefix substring
  * @s: Pointer to the string to be searched
  * @accept: Pointer to the string containing the bytes to be matched
+ *
  * Return: The number of bytes in the initial segment of s that match accept
  */
-
 unsigned int _strspn(char *s, char *accept)
-
 {
 	unsigned int count = 0;
 	int match;
@@ -30,5 +29,6 @@ unsigned int _strspn(char *s, char *accept)
 		count++;
 		s++;
 	}
+
 	return (count);
 }
