@@ -16,17 +16,18 @@ unsigned int _strspn(char *s, char *accept)
 	while (*s)
 	{
 		match = 0;
-		while (*accept)
+		for (int i = 0; accept[i] != '\0'; i++)
 		{
-			if (*s == *accept)
+			if (*s == accept[i])
 			{
 				match = 1;
 				break;
 			}
-			accept++;
 		}
+
 		if (!match)
 			break;
+
 		count++;
 		s++;
 	}
