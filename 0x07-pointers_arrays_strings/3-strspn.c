@@ -20,7 +20,6 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (*s == *accept)
 			{
-				count++;
 				match = 1;
 				break;
 			}
@@ -28,6 +27,7 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		if (!match)
 			break;
+		count++;
 		s++;
 	}
 
