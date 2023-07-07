@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 
 /**
  * _memcpy - Copies n bytes from source to destination memory area
@@ -12,7 +12,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 
 {
 	unsigned int i = 0;
-	
+
 	while (n > i)
 	{
 		dest[i] = src[i];
