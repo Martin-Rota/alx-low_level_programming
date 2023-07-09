@@ -30,12 +30,16 @@ int _strlen(char *s)
 
 int is_palindrome(char *s)
 {
+	int len = 0;
+	int start = 0;
+	int end = 0;
+
 	if (*s == '\0')
 		return (1);
 
-	int len = _strlen(s);
-	int start = 0;
-	int end = len - 1;
+	len = _strlen(s);
+	start = 0;
+	end = len - 1;
 
 	return (check_palindrome(s, start, end));
 }
