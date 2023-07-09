@@ -2,7 +2,7 @@
 
 /**
  * factorial - Returns the factorial of a given number
- * @n: The number to calculate 
+ * @n: The number to calculate
  *
  * Return: The factorial of the number
  *         If n is lower than 0, return -1 to indicate an error.
