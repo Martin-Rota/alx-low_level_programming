@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -c ~/alx-low_level_programming/0x09-static_libraries/*.c
+gcc -c *.c
 ar rc liball.a *.o
