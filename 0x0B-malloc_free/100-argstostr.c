@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 	char *concatenated_str;
 
 	/* Calculate the total length of the concatenated string */
-	total_length = 0
+	total_length = 0;
 	for (i = 0; i < ac; i++)
 	{
 		total_length += strlen(av[i]) + 1; /* +1 for '\n' */
