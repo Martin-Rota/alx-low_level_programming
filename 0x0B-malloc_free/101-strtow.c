@@ -8,6 +8,7 @@
  *
  * Return: 1 if c is a space character, 0 otherwise.
  */
+
 int is_space(char c)
 {
 	return c == ' ' || c == '\t' || c == '\n';
@@ -77,7 +78,7 @@ char **strtow(char *str)
 		else if (is_word == 0)
 		{
 			is_word = 1;
-			world_length = 1;
+			word_length = 1;
 
 			for (j = i + 1; str[j] != '\0' && !is_space(str[j]); j++)
 			{
