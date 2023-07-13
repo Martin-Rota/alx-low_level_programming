@@ -18,11 +18,12 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	int total_length = 0;
+	int total_length;
 	int i, j, k;
 	char *concatenated_str;
 
 	/* Calculate the total length of the concatenated string */
+	total_length = 0
 	for (i = 0; i < ac; i++)
 	{
 		total_length += strlen(av[i]) + 1; /* +1 for '\n' */
