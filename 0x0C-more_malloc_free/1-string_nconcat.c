@@ -7,6 +7,7 @@
  * Return: string length
  */
 int _strlen(char *string)
+
 {
 	int len;
 
@@ -15,7 +16,7 @@ int _strlen(char *string)
 }
 
 /**
- * string_nconcat - concatenate s1 and n bytes of s2; return ptr to string
+ * string_nconcat - concatenate s1 and n bytes of s2
  * @s1: string 1
  * @s2: string 2
  * @n: n bytes to concat from string 2
