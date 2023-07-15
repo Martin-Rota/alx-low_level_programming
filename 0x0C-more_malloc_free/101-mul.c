@@ -14,9 +14,8 @@ int validate_input(char *num)
 	int i;
 
 	i = 0;
-	while
-		(num[i] != '\0');
-		i++;
+	while (num[i] != '\0');
+	i++;
 
 	if (!isdigit(num[i]))
 		return (0);
