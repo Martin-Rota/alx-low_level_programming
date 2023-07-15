@@ -47,7 +47,7 @@ char **strtow(char *str)
 {
 	int words, i, j, k, l;
 	char **result;
-	
+
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
