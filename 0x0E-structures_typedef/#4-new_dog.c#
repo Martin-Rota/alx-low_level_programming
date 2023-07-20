@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-/**   new_dog - Creates a new dog_t structure.
+/**new_dog - Creates a new dog_t structure.
  * @name Pointer to the name of the new dog.
  * @age Age of the new dog.
  * @owner Pointer to the owner's name of the new dog
