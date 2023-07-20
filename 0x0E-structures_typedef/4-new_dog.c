@@ -1,11 +1,13 @@
 #include "dog.h"
 #include <stddef.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-/**   new_dog - Creates a new dog_t structure.
+/**new_dog - Creates a new dog_t structure.
  * @name Pointer to the name of the new dog.
  * @age Age of the new dog.
- * @owner Pointer to the owner's name of the new dog
+ * @owner Pointer to the owner's name of the new dog.
  *
  * Return: Pointer to the new dog_t structure, NULL if allocation fails
  */
