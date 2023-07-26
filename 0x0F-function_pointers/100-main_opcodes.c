@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 	unsigned char *main_ptr;
 	int i;
-	
+
 	main_ptr = (unsigned char *)&main;
 	i = 0;
 	for (i = 0; i < num_bytes; i++)
@@ -37,6 +37,6 @@ int main(int argc, char *argv[])
 		printf("%02x ", main_ptr[i]);
 	}
 
-	printf("\n");
+	printf("%02x\n", main_ptr[num_bytes - 1]);
 	return (0);
 }
