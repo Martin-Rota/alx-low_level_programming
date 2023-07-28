@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_node - Adds new node to end of list_t list
+ * add_node_end - Adds new node to end of list_t list
  * @head: Pointer to pointer to head of the list
  * @str: Data of new node.
  *
@@ -35,6 +35,7 @@ list_t *add_node_end(list_t **head, const char *str);
 	else
 	{
 		current = *head;
+		
 		while (current->next != NULL)
 			current = current->next;
 
