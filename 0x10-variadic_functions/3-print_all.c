@@ -1,6 +1,51 @@
 #include "variadic_functions.h"
 
 /**
+ * print_char - Print a character
+ * @args: va_list with the argument to print
+ */
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+
+/**
+ * print_int - Print an integer
+ * @args: va_list with the argument to print
+ */
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_float - Print a float
+ * @args: va_list with the argument to print
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - Print a string
+ * @args: va_list with the argument to print
+ */
+void print_string(va_list args)
+{
+	char *str = va_arg(args, char *);
+
+	if (str == NULL)
+	{
+		printf("(nil)");
+	}
+	else
+	{
+		printf("%s", str);
+	}
+}
+
+/**
  * print_all - Print anything
  * @format: List of types of arguments passed to the function
  */
