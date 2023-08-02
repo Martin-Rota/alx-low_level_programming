@@ -39,10 +39,7 @@ void print_string(va_list args)
 	{
 		printf("(nil)");
 	}
-	else
-	{
-		printf("%s", str);
-	}
+	printf("%s", str);
 }
 
 /**
