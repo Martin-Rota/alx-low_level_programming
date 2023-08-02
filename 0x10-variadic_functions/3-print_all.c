@@ -4,28 +4,35 @@
  * print_all - Prints anything
  * @format: List of types of arguments passed to the function
  */
-void print_all(const char * const format, ...)
+void print_all(const char * const format, ...);
 {
 	va_list args;
 	char *str;
 	int i = 0;
 	char c;
+	int flag = 0;
 
 	va_start(args, format);
 
 	while (format && format[i])
 	{
+		if (flag)
+			printf(", ");
+
 		switch (format[i])
 		{
 			case 'c':
 				c = va_arg(args, int);
 				printf("%c", c);
+				flag = 1;
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
+				flag = 1;
 				break;
 			case 'f':
 				printf("%f", va_arg(args, double));
+				flag = 1;
 				break;
 			case 's':
 				str = va_arg(args, char *);
@@ -33,10 +40,16 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 				else
 					printf("%s", str);
-				break;
-			default:
+				flag = 1;
 				break;
 		}
+
+		i++;
+	}
+
+	printf("\n");
+	va_end(args);
+}
 
 		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's') && format[i + 1])
 			printf(",\t");
