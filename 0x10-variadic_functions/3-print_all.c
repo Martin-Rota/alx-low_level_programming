@@ -38,6 +38,7 @@ void print_string(va_list args)
 	if (str == NULL)
 	{
 		printf("(nil)");
+		return;
 	}
 	printf("%s", str);
 }
