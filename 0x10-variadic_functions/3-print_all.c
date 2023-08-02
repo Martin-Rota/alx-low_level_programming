@@ -4,7 +4,7 @@
  * print_all - Prints anything
  * @format: List of types of arguments passed to the function
  */
-void print_all(const char * const format, ...);
+void print_all(const char * const format, ...)
 {
 	va_list args;
 	char *str;
@@ -43,16 +43,6 @@ void print_all(const char * const format, ...);
 				flag = 1;
 				break;
 		}
-
-		i++;
-	}
-
-	printf("\n");
-	va_end(args);
-}
-
-		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's') && format[i + 1])
-			printf(",\t");
 
 		i++;
 	}
