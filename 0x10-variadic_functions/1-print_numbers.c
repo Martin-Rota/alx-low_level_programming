@@ -5,7 +5,6 @@
  * @n: Number of  integers passed to the function
  * @...: Parameters to be summed up.
  * @separator: String to be printed between numbers
- * 
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
