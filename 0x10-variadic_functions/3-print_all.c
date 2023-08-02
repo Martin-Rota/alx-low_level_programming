@@ -19,7 +19,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	while (format != NULL && format[i] != "\0")
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (args_list[j].specifier != '\0')
@@ -34,6 +34,7 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
+
 	printf("\n");
 	va_end(args);
 }
