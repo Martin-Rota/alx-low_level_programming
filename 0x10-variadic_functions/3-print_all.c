@@ -51,17 +51,19 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	char *separator = "";
-	unsigned int i = 0, j = 0;
-	arg_t args_list[] = {
+	unsigned int i, j;
+	arg_t args_list[];
+
+	args_list[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_string},
 		{'\0', NULL}
 	};
-
 	va_start(args, format);
 
+	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
