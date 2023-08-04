@@ -52,7 +52,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *separator = "";
 	unsigned int i, j;
-	arg_t args_list[];
+	arg_t args_list;
 
 	args_list[] = {
 		{'c', print_char},
