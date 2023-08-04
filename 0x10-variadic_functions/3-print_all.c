@@ -52,15 +52,14 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *separator = "";
 	unsigned int i, j;
-	arg_t args_list;
-
-	args_list[] = {
+	arg_t args_list[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_string},
 		{'\0', NULL}
 	};
+
 	va_start(args, format);
 
 	i = 0;
