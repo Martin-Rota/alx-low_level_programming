@@ -25,10 +25,12 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	for (i = len - 1; i >= 0; i--)
+	{
+		{
 		if (b[i] == '1')
 			decimal += base;
-
-		else base *= 2;
-
+		}
+		base *= 2;
+	}
 	return (decimal);
 }
