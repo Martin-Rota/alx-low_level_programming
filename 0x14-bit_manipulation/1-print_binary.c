@@ -1,6 +1,6 @@
 #include "main.h"
 
-/**                                                                            
+/**
  * print_binary - prints the binary representation of a number.
  * @n: decimal number to be converted
  */
@@ -8,7 +8,7 @@
 void print_binary(unsigned long int n)
 {
 	unsigned int binary_digit, binary = 0;
-	int i = 1; //places bit in right position
+	int i = 1; /* places bit in right position */
 
 	if (n > 0)
 	{
@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 			n /= 2;
 			i *= 10;
 		}
-	printf(" %lu\n", binary);
+	printf(" %u\n", binary);
 	}
 
 	else
