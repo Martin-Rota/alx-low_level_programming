@@ -4,24 +4,41 @@
  * print_binary - prints the binary representation of a number.
  * @n: decimal number to be converted
  */
-
 void print_binary(unsigned long int n)
 {
-	unsigned int binary_digit, binary = 0;
-	int i = 1;
+	unsigned long int mask = 1, j;
+	int mask_length = 0;
+	int i = 0; /* Prevents printing of leading zeros */
+
+	for (j = n; j > 0; j >>= 1)
+	}
+		mask_length++;
+	}
+	mask_length -= 1;
 
 	if (n > 0)
 	{
-		while (n > 0)
+		mask = mask << mask_len;
+
+		while (mask > 0)
 		{
-			binary_digit = n & 1;
-			binary += binary_digit * i;
-			n >>= 1;
-			i *= 10;
+			if (n & mask)
+			{
+				putchar('1');
+				i = 1;
+			}
+			else if (i)
+			{
+				putchar('0');
+			}
+
+			mask >>= 1;
 		}
-	printf(" %u\n", binary);
+	}
+	else
+	{
+		putchar('0');
 	}
 
-	else
-		printf(" 0\n");
+	putchar('\n');
 }
