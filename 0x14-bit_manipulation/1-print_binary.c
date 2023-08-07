@@ -11,14 +11,14 @@ void print_binary(unsigned long int n)
 	int i = 0; /* Prevents printing of leading zeros */
 
 	for (j = n; j > 0; j >>= 1)
-	}
-		mask_length++;
+	{
+		mask_length += 1;
 	}
 	mask_length -= 1;
 
 	if (n > 0)
 	{
-		mask = mask << mask_len;
+		mask = mask << mask_length;
 
 		while (mask > 0)
 		{
