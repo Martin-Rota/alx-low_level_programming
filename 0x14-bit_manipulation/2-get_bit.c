@@ -10,7 +10,7 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int mask = 1, j;
-	int mask_length = index, int_length = 0;
+	unsigned int int_length = 0;
 
 	for (j = n; j > 0; j >>= 1)
 	{
@@ -18,7 +18,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	int_length -= 1;
 	
-	mask = mask << mask_length;
+	mask = mask << index;
 
 	if (index > int_length)
 		return(-1);
