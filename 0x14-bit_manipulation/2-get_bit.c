@@ -17,15 +17,15 @@ int get_bit(unsigned long int n, unsigned int index)
 		int_length += 1;
 	}
 	int_length -= 1;
-	
+
 	mask = mask << index;
 
-	if (index > int_length)
-		return(-1);
+	if (index >= int_length)
+		return (-1);
 
 	else if (n & mask)
-		return(1);
+		return (1);
 
 	else
-		return(0);
+		return (0);
 }
