@@ -8,7 +8,6 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int mask = 1, j;
 	int mask_length = 0;
-	int i = 0; /* Prevents printing of leading zeros */
 
 	for (j = n; j > 0; j >>= 1)
 	{
@@ -20,18 +19,8 @@ void print_binary(unsigned long int n)
 	{
 		mask = mask << mask_length;
 
-		while (mask > 0)
-		{
-			if (n & mask)
-			{
-				putchar('1');
-				i = 1;
-			}
-			else if (i)
-			{
-				putchar('0');
-			}
-
+		while (mask > 0){
+			printf("%lu", n & mask);
 			mask >>= 1;
 		}
 	}
