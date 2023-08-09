@@ -20,7 +20,12 @@ void print_binary(unsigned long int n)
 		mask = mask << mask_length;
 
 		while (mask > 0){
-			printf("%lu", n & mask);
+			if (n & mask)
+				putchar('1');
+
+			else if
+				putchar ('0');
+
 			mask >>= 1;
 		}
 	}
