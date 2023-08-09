@@ -23,7 +23,7 @@ void print_binary(unsigned long int n)
 			if (n & mask)
 				putchar('1');
 
-			else if
+			else
 				putchar('0');
 
 			mask >>= 1;
