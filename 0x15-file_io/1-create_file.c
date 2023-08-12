@@ -1,34 +1,46 @@
 #include "main.h"
 
 /**
-* read_textfile - Reads a text file and prints it to the POSIX standard output
-* @filename: File to read from
-* @letters: The number of letters it should read and print
+* create_file -  creates a file.
+* @filename: name of the file to create.
+* @text_content: a NULL terminated string to write to the file
 *
-* Return: actual number of letters it could read and print.
-*	: O if filename is null or if write fails.
+* Return: 1 on success, -1 on failure
 */
 
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	char str[letters];
-	FILE *fd = NULL;
-	ssize_t count;
+	FILE *fd;
+	size_t written_bytes, i;
 
-	fd = fopen(filename,"r");
+	if (filename == NULL)
+		return -1;
+
+	fd = fopen(filename,"w");
 	if(fd == NULL)
-		return (0);
+		chmod(filename, S_IRUSR | S_IWUSR);
+	if (fd == -1)
+		return (-1);
 
-	count = 0;
-	while (fgets(str, letters, fd)) != NULL)
+	written_bytes = 0; 
+	for (i = 0; i < strlen(text_content); i++)
 	{
-		fputs(str,stdout);
-		if (fputs(str,stdout) == EOF)
-			return (0);
-		count += strlen(str);
+		if (fputc(text_content[i], fd) != EOF)
+		{
+			written_bytes++;
+		}
+		else
+		{
+			break;
+		}
 	}
+	close(fd);
 
-	fclose(fd);
-
-	return (count);
+	if (written_bytes == strlen(text_content))
+	{
+		return (1);
+	}
+	else
+	{
+		return (-1);
 }
