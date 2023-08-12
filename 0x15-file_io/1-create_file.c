@@ -11,38 +11,26 @@
 int create_file(const char *filename, char *text_content)
 {
 	FILE *fd;
-	size_t written_bytes, i;
+	ssize_t written_bytes;
 
 	if (filename == NULL)
 		return -1;
 
-	fd = fopen(filename,"w");
-	if(fd == NULL)
-		chmod(filename, S_IRUSR | S_IWUSR);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (fd == -1)
 		return (-1);
 
-	written_bytes = 0; 
-	for (i = 0; i < strlen(text_content); i++)
+	if (text_content != NULL) 
 	{
-		if (fputc(text_content[i], fd) != EOF)
+		written_bytes = write(fd, text_content, strlen(text_content));
+		if (written_bytes == -1)
 		{
-			written_bytes++;
-		}
-		else
-		{
-			break;
+			close(fd);
+			return (-1);
 		}
 	}
-	if (fclose(fd) == EOF)
-		return -1;
 
-	if (written_bytes == strlen(text_content))
-	{
-		fchmod(fileno(fd), S_IRUSR | S_IWUSR);
-		return (1);
-	}
-	else
-	{
-		return (-1);
+	close(fd);
+
+	return (1);
 }
