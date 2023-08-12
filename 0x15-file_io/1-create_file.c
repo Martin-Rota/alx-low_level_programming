@@ -34,10 +34,12 @@ int create_file(const char *filename, char *text_content)
 			break;
 		}
 	}
-	close(fd);
+	if (fclose(fd) == EOF)
+		return -1;
 
 	if (written_bytes == strlen(text_content))
 	{
+		fchmod(fileno(fd), S_IRUSR | S_IWUSR);
 		return (1);
 	}
 	else
