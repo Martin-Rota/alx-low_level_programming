@@ -11,24 +11,28 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char str[letters];
+	int c;
 	FILE *fd = NULL;
-	ssize_t count;
+	size_t count;
+
+	if (filename == NULL)
+		return (0);
 
 	fd = fopen(filename,"r");
 	if(fd == NULL)
 		return (0);
 
 	count = 0;
-	while (fgets(str, letters, fd)) != NULL)
+	while (count < letters && (c = fgetc(fd)) != EOF)
 	{
-		fputs(str,stdout);
-		if (fputs(str,stdout) == EOF)
-			return (0);
-		count += strlen(str);
+		putchar(c);
+		count ++;
 	}
 
 	fclose(fd);
+
+	if (ferror(fd))
+		return (0);
 
 	return (count);
 }
