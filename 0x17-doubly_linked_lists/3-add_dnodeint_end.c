@@ -3,7 +3,7 @@
 /**
  * add_dnodeint_end -  adds a new node at the end of a dlistint_t list
  * @head: A pointer to a pointer to the head of the doubly linked list.
- * @n - integer data stored in the n field
+ * @n: Integer data stored in the n field
  *
  * Return: The address of the new element, or NULL if it failed
  */
