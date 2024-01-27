@@ -7,7 +7,7 @@
 
 /**
  * struct dlistint_s - doubly linked list
- * @data: integer
+ * @n: integer
  * @prev: points to the previous node
  * @next: points to the next node
  *
@@ -15,7 +15,7 @@
  */
 
 typedef struct dlistint_t {
-    int data;
+    int n;
     struct dlistint_t *prev;
     struct dlistint_t *next;
 } dlistint_t;
