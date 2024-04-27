@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -11,38 +13,41 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    FILE *file;
-    ssize_t n_read = 0, n_written = 0;
-    char *buffer;
+	FILE *file;
+	ssize_t n_read = 0, n_written = 0;
+	char *buffer;
 
-    if (filename == NULL)
-      return (0);
+	if (filename == NULL)
+		return 0;
 
-    file = fopen(filename, "r");
-    if (file == NULL)
-      return (0);
+	file = fopen(filename, "r");
+	if (file == NULL)
+		return 0;
 
-    buffer = malloc(sizeof(char) * letters);
-    if (buffer == NULL) {
-        fclose(file);
-        return (0);
-    }
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+	{
+		fclose(file);
+		return 0;
+	}
 
-    n_read = fread(buffer, sizeof(char), letters, file);
-    if (ferror(file)) {
-        free(buffer);
-        fclose(file);
-        return (0);
-    }
+	n_read = fread(buffer, sizeof(char), letters, file);
+	if (ferror(file))
+	{
+		free(buffer);
+		fclose(file);
+		return 0;
+	}
 
-    n_written = fwrite(buffer, sizeof(char), n_read, stdout);
-    if (n_written < n_read) {
-        free(buffer);
-        fclose(file);
-        return (0);
-    }
+	n_written = fwrite(buffer, sizeof(char), n_read, stdout);
+	if (n_written < n_read)
+	{
+		free(buffer);
+		fclose(file);
+		return 0;
+	}
 
-    free(buffer);
-    fclose(file);
-    return (n_written);
+	free(buffer);
+	fclose(file);
+	return n_written;
 }
