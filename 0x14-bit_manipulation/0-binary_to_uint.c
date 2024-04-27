@@ -7,22 +7,21 @@
  */
 unsigned int binary_to_uint(const char *b) 
 {
-	// Check if the input is NULL
+  unsigned int result = 0;
+	int i;
+  /* Check if the input is NULL */
 	if (b == NULL) {
 	return (0);
 	}
-
-	unsigned int result = 0;
-	int i;
-	// Iterate through each character in the string
-	for (int i = 0; b[i] != '\0'; i++)
+	/* Iterate through each character in the string*/
+	for (i = 0; b[i] != '\0'; i++)
 	{
-	// Check if the current character is not '0' or '1'
+	  /* Check if the current character is not '0' or '1'*/
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-	// Shift the current result left by 1 bit and add the current digit
+	  /* Shift the current result left by 1 bit and add the current digit*/
 			result = result * 2 + (b[i] - '0');
 	}
 
-	return (result); //martin rota's code
+	return (result);
 }
