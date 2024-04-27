@@ -1,53 +1,50 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * read_textfile - Reads a text file and prints it to the POSIX standard output
- * @filename: File to read from
- * @letters: The number of letters it should read and print
- *
- * Return: actual number of letters it could read and print;
- *         0 if the file cannot be opened or read, or if filename is NULL,
- *         or if write fails or does not write the expected amount of bytes.
+ * read_textfile - read a certain size and prints to std output
+ * @filename: file to read from
+ * @letters: size to read
+ * Return: actual size read and printed
  */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file;
-	ssize_t n_read = 0, n_written = 0;
+	int fd;
+	ssize_t n_read, n_written;
 	char *buffer;
 
 	if (filename == NULL)
-		return 0;
+		return (0);
 
-	file = fopen(filename, "r");
-	if (file == NULL)
-		return 0;
+	/* open file */
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
 
+	/* malloc temporary buffer */
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-	{
-		fclose(file);
-		return 0;
-	}
+		return (0);
 
-	n_read = fread(buffer, sizeof(char), letters, file);
-	if (ferror(file))
+	/* read to buffer */
+	n_read = read(fd, buffer, letters);
+	if (n_read == -1)
 	{
 		free(buffer);
-		fclose(file);
-		return 0;
+		close(fd);
+		return (0);
 	}
 
-	n_written = fwrite(buffer, sizeof(char), n_read, stdout);
-	if (n_written < n_read)
+	/* write from buffer*/
+	n_written = write(STDOUT_FILENO, buffer, n_read);
+	if (n_written == -1)
 	{
 		free(buffer);
-		fclose(file);
-		return 0;
+		close(fd);
+		return (0);
 	}
 
-	free(buffer);
-	fclose(file);
-	return n_written;
+	close(fd);
+	return (n_read);
+
 }
