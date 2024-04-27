@@ -14,6 +14,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int c;
 	FILE *fd = NULL;
 	size_t count;
+	FILE *output_stream;
 
 	if (filename == NULL)
 		return (0);
@@ -22,8 +23,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == NULL)
 		return (0);
 
+	output_stream = to_stderr ? stderr : stdout;
+
 	count = 0;
-	FILE *output_stream = to_stderr ? stderr : stdout;
 	while (count < letters && (c = fgetc(fd)) != EOF)
 	{
 		fputc(c, stdout);
