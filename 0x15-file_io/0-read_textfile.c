@@ -18,15 +18,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	fd = fopen(filename,"r");
-	if(fd == NULL)
+	fd = fopen(filename, "r");
+	if (fd == NULL)
 		return (0);
 
 	count = 0;
+	FILE *output_stream = to_stderr ? stderr : stdout;
 	while (count < letters && (c = fgetc(fd)) != EOF)
 	{
 		fputc(c, stdout);
-		count ++;
+		count++;
 	}
 
 	fclose(fd);
